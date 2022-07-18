@@ -1,14 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  purchases: [{
-    id: 0,
-    product: '',
-    amount: '',
-    currencyName: '',
-    time: '',
+  // purchases: [{
+  //   id: 0,
+  //   product: '',
+  //   amount: '',
+  //   currencyName: '',
+  //   time: '',
 
-  }],
+  // }],
+  purchases: [],
   currentCurrencyOption: 'UAN',
   currencyOptions: [],
 };

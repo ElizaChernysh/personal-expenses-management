@@ -1,0 +1,12 @@
+.PurchasesList__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.PurchasesList__item {
+  padding: 15px 20px;
+  background-color: rgb(91, 129, 129);
+  border: 1px solid grey;
+  border-radius: 5px;
+  /* width: 300px; */
+}

@@ -1,12 +1,13 @@
 import { useState, useCallback, useEffect } from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { loadCurrency, setCurrencyOption, addPurchase } from "./sore/reducers/productSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from 'react-redux';
 import { getCurrencyFromServer } from './api/api';
-// import Tabs from 'react-bootstrap/Tabs';
-// import Tab from 'react-bootstrap/Tab';
+import PurchasesList from './components/PurchasesList';
+import { Form } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 export const App = () => {
   const [good, setGoods] = useState('');
@@ -14,7 +15,6 @@ export const App = () => {
   const [amount, setAmount] = useState('');
   const dispatch = useDispatch();
   const currentCurrencyOption = useSelector(state => state.purchase.currentCurrencyOption);
-  const purchasesArray = useSelector(state => state.purchase.purchases);
 
   // console.log(purchasesArray);
 
@@ -55,67 +55,66 @@ export const App = () => {
         currencyName: currentCurrencyOption,
         time: date,
       }));
-      // setGoods('');
-      // setDate('');
-      
+      setGoods('');
+      setDate('');
+      setAmount('');
     }
   }
 
-  // console.log(purchasesArray);
   return (
     <div className="App">
       <header className="App-header">
         <h1>Title</h1>
 
         <form className='Form' onSubmit={handleSubmit}>
-          <label>
+          <label className=''>
             Choose date
             {' '}
-            <input
+            <Form.Control
               type="date"
               min="2020-01-01"
               value={date}
               onChange={(event) => handleChangeDate(event)}
+              className="Form__control"
             />
           </label>
-          <input
+          <Form.Control
             type="text"
             placeholder="enter good"
             value={good}
             onChange={(event) => handleChangeGood(event)}
+            className="Form__control"
           />
           <label>
             Choose amount and currency
             {' '}
-            <input 
+            <Form.Control
               type="number"
               value={amount}
               onChange={(event) => handleChangeAmount(event)}
+              className="Form__control"
             />
-            <select
+            <Form.Select
+              defaultValue='UAN'
               onChange={(event) => handleCurrencyOption(event)}
+              className="Form__control"
             >
-              <option selected value="UAH">UAH</option>
-              <option value="EUR">EUR</option>
-              <option value="PLN">PLN</option>
-            </select>
+              <option value='UAH'>UAH</option>
+              <option value='EUR'>EUR</option>
+              <option value='PLN'>PLN</option>
+            </Form.Select>
           </label>
-          <button type="submit">purchase</button>
+          <Button
+            variant="outline-primary"
+            type="submit"
+          >
+            Add purchase
+          </Button>
         </form>
       </header>
 
-     <ul>
-      {purchasesArray.length > 0 &&
-        purchasesArray.map((item) => {
-          return (
-            <li key={item.id}>
-              <p>{item.time}</p>
-              <p>{item.product}</p>
-              <p>{item.amount}<span>{' '}{item.currencyName}</span></p>
-            </li>
-          )
-        })}
-     </ul>
+
+      <PurchasesList />
     </div>
   );
 }

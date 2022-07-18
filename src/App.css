@@ -10,3 +10,11 @@
   max-width: 400px;
   margin: auto;
 }
+
+ul {
+  list-style: none;
+}
+
+.Form__control {
+  margin-bottom: 10px;
+}
