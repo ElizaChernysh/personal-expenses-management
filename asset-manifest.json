@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/personal-expenses-management/static/css/main.4576ff59.css",
-    "main.js": "/personal-expenses-management/static/js/main.f0b91b01.js",
+    "main.css": "/personal-expenses-management/static/css/main.eff143fe.css",
+    "main.js": "/personal-expenses-management/static/js/main.cec12d38.js",
     "index.html": "/personal-expenses-management/index.html",
-    "main.4576ff59.css.map": "/personal-expenses-management/static/css/main.4576ff59.css.map",
-    "main.f0b91b01.js.map": "/personal-expenses-management/static/js/main.f0b91b01.js.map"
+    "main.eff143fe.css.map": "/personal-expenses-management/static/css/main.eff143fe.css.map",
+    "main.cec12d38.js.map": "/personal-expenses-management/static/js/main.cec12d38.js.map"
   },
   "entrypoints": [
-    "static/css/main.4576ff59.css",
-    "static/js/main.f0b91b01.js"
+    "static/css/main.eff143fe.css",
+    "static/js/main.cec12d38.js"
   ]
 }
