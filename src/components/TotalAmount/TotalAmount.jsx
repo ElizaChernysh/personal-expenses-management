@@ -59,21 +59,29 @@ const TotalAmount = () => {
   }, [currencyRates, option, result]);
 
   return (
-    <div>
+    <div className="TotalAmount">
+      <h2 className="TotalAmount__title">Total</h2>
+      <div className="TotalAmount__wrapper">
       <Form.Select
         defaultValue="UAH"
         onChange={(event) => handleCurrencyTotal(event)}
-        className="Form__control"
+        className="TotalAmount__select"
       >
         <option value="UAH">UAH</option>
         <option value="EUR">EUR</option>
         <option value="PLN">PLN</option>
       </Form.Select>
-      <Button variant="primary" type="button" onClick={calculateExtenses}>
+      <Button 
+        variant="primary" 
+        type="button" 
+        onClick={calculateExtenses}
+        className="TotalAmount__button"
+      >
         Calculation of expenses
       </Button>
 
       <p className="TotalAmount__result">{totalExtenses}</p>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 // import './styles/main.scss';
 import { App } from './App';
 import { store } from './sore/store'
+import './index.css';
 // import { setupStore } from './sore/store';
 
 // const store = setupStore();

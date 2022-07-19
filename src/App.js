@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { loadCurrency} from "./sore/reducers/productSlice";
+import { loadCurrency } from "./sore/reducers/productSlice";
 import { useDispatch } from 'react-redux';
 import { getCurrencyFromServer } from './api/api';
 import PurchasesList from './components/PurchasesList/PurchasesList';
@@ -22,12 +22,15 @@ export const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Title</h1>
-      </header>
-      <FormForCards/>
-      <PurchasesList />
-      <TotalAmount/>
+      <div className='App__wrapper-forms'>
+        <header className="App__header" >
+        </header>
+        <FormForCards />
+        <TotalAmount />
+      </div>
+      <div className='App__wrapper-lists'>
+        <PurchasesList />
+      </div>
     </div>
   );
 }

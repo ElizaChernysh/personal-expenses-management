@@ -1,14 +1,20 @@
 .App {
   max-width: 1024px;
+  padding: 20px 10px;
   margin: auto;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
+
+/* .App__title {
+  
+} */
 
 .Form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: auto;
+  max-width: 300px;
+  /* margin: auto; */
 }
 
 ul {
