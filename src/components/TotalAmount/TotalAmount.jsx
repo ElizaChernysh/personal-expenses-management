@@ -3,10 +3,8 @@ import { Button, Form } from "react-bootstrap";
 import {
   getCalculationExtenses,
   setOptionExtenses,
-  loadCurrency,
 } from "../../sore/reducers/productSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { getCurrencyFromServer } from "../../api/api";
 import './TotalAmount.css';
 
 const TotalAmount = () => {
@@ -17,13 +15,6 @@ const TotalAmount = () => {
   const purchasesArray = useSelector((state) => state.purchase.purchases);
   const currencyRates = useSelector((state) => state.purchase.currencyOptions);
   const option = useSelector((state) => state.purchase.optionExtenses);
-
-  useEffect(() => {
-    getCurrencyFromServer().then((data) => {
-      dispatch(loadCurrency(data.rates));
-      console.log(data.rates);
-    });
-  }, [dispatch]);
 
   const handleCurrencyTotal = useCallback(
     (e) => {

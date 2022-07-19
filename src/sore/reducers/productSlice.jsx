@@ -37,29 +37,8 @@ export const productSlice = createSlice({
       state.purchases = state.purchases.filter(item => item.id !== action.payload)
     },
 
-    deleteEvent(state, action) {
-      state.purchases = [...state.purchases, action.payload];
-    },
-
     setPurchaseToEdit(state, action) {
       state.purchaseToEdit = action.payload;
-    },
-
-    editPurchase(state, action) {
-      state.purchases = state.events.map(purchase => {
-        if (purchase.id === state.purchaseToEdit) {
-          return {
-            ...purchase,
-            product: action.payload.product,
-            time: action.payload.time,
-            amount: action.payload.amount,
-          };
-        }
-
-        return {
-          ...purchase,
-        };
-      });
     },
 
     getCalculationExtenses(state, action) {
@@ -72,5 +51,5 @@ export const productSlice = createSlice({
   },
 });
 
-export const {loadCurrency, setCurrencyOption, addPurchase, deleteEvent, setPurchaseToEdit, editPurchase, getCalculationExtenses, setOptionExtenses, removePurchase } = productSlice.actions;
+export const {loadCurrency, setCurrencyOption, addPurchase, setPurchaseToEdit, getCalculationExtenses, setOptionExtenses, removePurchase } = productSlice.actions;
 export default productSlice.reducer;

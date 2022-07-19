@@ -22,13 +22,13 @@ export const App = () => {
 
   return (
     <div className="App">
-      <div className='App__wrapper-forms'>
+      <div className='App__wrapper App__wrapper-forms'>
         <header className="App__header" >
         </header>
         <FormForCards />
         <TotalAmount />
       </div>
-      <div className='App__wrapper-lists'>
+      <div className='App__wrapper App__wrapper-lists'>
         <PurchasesList />
       </div>
     </div>

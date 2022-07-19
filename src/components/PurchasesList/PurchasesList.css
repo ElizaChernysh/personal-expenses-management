@@ -1,12 +1,67 @@
-.PurchasesList__list {
+.PurchasesList {
+  background-color: rgba(186, 221, 235, 0.623);
+  border: 1px solid rgba(209, 205, 205, 0.863);
+  border-radius: 5px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.PurchasesList__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 20px;
+
+  gap: 20px;
+}
+
+.PurchasesList__title{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  padding: 10px 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 5px;
 }
 
 .PurchasesList__item {
   padding: 15px 20px;
-  background-color: rgb(91, 129, 129);
+  background-color: #fff;
   border: 1px solid grey;
   border-radius: 5px;
-  /* width: 300px; */
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
 }
+
+.PurchasesList__item:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transform: scale(1.1);
+}
+
+.PurchasesList__time {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(116, 113, 113);
+  margin-bottom: 5px;
+}
+
+.PurchasesList__product {
+  font-size: 25px;
+  font-weight: 600;
+  color: rgb(43, 40, 40);
+  margin-bottom: 5px;
+}
+
+.PurchasesList__amount {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(165, 53, 53);
+  margin-bottom: 5px;
+}
+
+.PurchasesList__button {
+  border: none;
+  align-self: flex-end;
+}
+

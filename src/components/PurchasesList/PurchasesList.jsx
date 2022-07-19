@@ -15,14 +15,14 @@ const PurchasesList = () => {
           purchasesArray.map((item) => {
             return (
               <li key={item.id} className="PurchasesList__item">
-                <p>{item.time}</p>
-                <p>{item.product}</p>
-                <p>
+                <p className="PurchasesList__time">{item.time}</p>
+                <p className="PurchasesList__product">{item.product}</p>
+                <p className="PurchasesList__amount">
                   {item.amount}
-                  <span> {item.currencyName}</span>
+                  <span className="PurchasesList__currency"> {item.currencyName}</span>
                 </p>
                 <button
-                  className="Edit-window__button"
+                  className="PurchasesList__button"
                   type="button"
                   onClick={() => dispatch(removePurchase(item.id))}
                 >
