@@ -34,7 +34,7 @@ export const productSlice = createSlice({
     },
 
     removePurchase: (state, action) => {
-      state.purchases.filter(item => item.id !== action.payload)
+      state.purchases = state.purchases.filter(item => item.id !== action.payload)
     },
 
     deleteEvent(state, action) {
