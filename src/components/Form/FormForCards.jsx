@@ -79,7 +79,7 @@ const FormForCards = () => {
             className="Form__control"
           />
           <Form.Select
-            defaultValue="UAN"
+            defaultValue="UAH"
             onChange={(event) => handleCurrencyOption(event)}
             className="Form__control"
           >

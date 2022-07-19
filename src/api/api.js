@@ -2,7 +2,7 @@ const BASE_URL = 'https://api.exchangerate.host/latest';
 
 export const getCurrencyFromServer = async () => {
   try {
-    const response = await fetch(`${BASE_URL}?base=PLN&symbols=USD,EUR,UAH`);
+    const response = await fetch(`${BASE_URL}?base=UAH&symbols=USD,EUR,PLN`);
     const currency = await response.json();
 
     return currency;
@@ -14,3 +14,5 @@ export const getCurrencyFromServer = async () => {
     }
   }
 };
+
+

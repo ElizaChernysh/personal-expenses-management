@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { getCurrencyFromServer } from './api/api';
 import PurchasesList from './components/PurchasesList/PurchasesList';
 import FormForCards from "./components/Form/FormForCards";
+import TotalAmount from './components/TotalAmount/TotalAmount';
 
 export const App = () => {
 
@@ -26,6 +27,7 @@ export const App = () => {
       </header>
       <FormForCards/>
       <PurchasesList />
+      <TotalAmount/>
     </div>
   );
 }

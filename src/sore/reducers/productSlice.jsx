@@ -10,8 +10,10 @@ const initialState = {
 
   // }],
   purchases: [],
-  currentCurrencyOption: 'UAN',
+  currentCurrencyOption: 'UAH',
   currencyOptions: [],
+  optionExtenses: 'UAH',
+  totalAmount: '',
 };
 
 export const productSlice = createSlice({
@@ -27,11 +29,12 @@ export const productSlice = createSlice({
       state.currentCurrencyOption = action.payload;
     },
 
-    // addPurchase(state, action) {
-    //   state.purchases = [...state.purchases, action.payload];
-    // },
     addPurchase: (state,action) => {
       state.purchases.push(action.payload);
+    },
+
+    removePurchase: (state, action) => {
+      state.purchases.filter(item => item.id !== action.payload)
     },
 
     deleteEvent(state, action) {
@@ -58,8 +61,16 @@ export const productSlice = createSlice({
         };
       });
     },
+
+    getCalculationExtenses(state, action) {
+      state.totalAmount = action.payload;
+    },
+
+    setOptionExtenses(state, action) {
+      state.optionExtenses = action.payload;
+    },
   },
 });
 
-export const {loadCurrency, setCurrencyOption, addPurchase, deleteEvent, setPurchaseToEdit, editPurchase } = productSlice.actions;
+export const {loadCurrency, setCurrencyOption, addPurchase, deleteEvent, setPurchaseToEdit, editPurchase, getCalculationExtenses, setOptionExtenses, removePurchase } = productSlice.actions;
 export default productSlice.reducer;
